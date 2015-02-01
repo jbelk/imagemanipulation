@@ -1,0 +1,184 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="emotys"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Emotys</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body ng-controller="MainCtrl" ng-cloak>
+
+   <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <fa-app class="full-screen">
+          <fa-view>
+          <fa-header-footer-layout>
+            <!-- header -->
+            <fa-modifier fa-size="[undefined,65]" >
+            <fa-view>
+
+            <!-- header background-->
+            <fa-modifier fa-align="[0.5, 0]" 
+                         fa-origin="[0.5, 0]"
+                         fa-size="[undefined,65]">   
+              <fa-surface fa-background-color="'#fff'" fa-properties='{zIndex: 100}'>
+              </fa-surface>
+            </fa-modifier>
+            <!-- logo -->
+            <fa-modifier fa-align="[0.005, 0.015]" 
+                         fa-origin="[0, 0]"
+                         fa-size="[67,49]">   
+              <fa-image-surface fa-image-url="/images/logo.png" fa-size="[67, 49]" fa-properties='{zIndex: 100}'>
+              </fa-image-surface>
+            </fa-modifier>
+            <!-- btn bg -->
+            <fa-modifier fa-align="btnbg.get()" 
+                         fa-origin="[0, 0]"
+                         fa-size="[100,65]">
+              <fa-surface fa-background-color="'rgba(5, 81, 99, 1)'" fa-properties='{zIndex: 100}'></fa-surface>
+            </fa-modifier>
+            <!-- discoverlink -->
+            <fa-modifier fa-align="[0.14, 0.035]" 
+                         fa-origin="[0, 0]"
+                         fa-size="[100,65]"
+                         >
+              <fa-surface fa-properties='{zIndex: 100}'> <a ui-sref="discover" class="headerlink " ng-style="{'color': discovercolor}" >Discover</a></fa-surface>
+            </fa-modifier>
+            <!-- makelink -->
+            <fa-modifier fa-align="[0.261, 0.035]" 
+                         fa-origin="[0, 0]"
+                         fa-size="[100,65]"
+                         >
+              <fa-surface fa-properties='{zIndex: 100}'> <a ui-sref="meme" class="headerlink" ng-style="{'color': memecolor}" >Create</a></fa-surface>
+            </fa-modifier>
+            <!-- cataloglink -->
+            <fa-modifier fa-align="[0.37, 0.035]" 
+                         fa-origin="[0, 0]"
+                         fa-size="[100,65]"
+                         >
+              <fa-surface fa-properties='{zIndex: 100}'> <a ui-sref="catalog" class="headerlink" ng-style="{'color': catalogcolor}">Catalog</a></fa-surface>
+            </fa-modifier>
+            <!-- searchicon -->
+            <fa-modifier fa-align="[0.5, 0.031]" 
+                         fa-origin="[0, 0]"
+                         fa-size="[25, 25]"
+                         fa-scale="searchscale.get()">   
+              <fa-image-surface ng-click="opensearch()" class="headerlinkerr" fa-image-url="/images/search.png" fa-properties='{zIndex: 100}'>
+              </fa-image-surface>
+            </fa-modifier>
+            <!-- input surface -->
+            <fa-modifier fa-align="[0.53, 0]" 
+                         fa-origin="[0, 0]"
+                         fa-size="searchsize.get()"
+                         >
+              <fa-surface fa-background-color="'rgba(5, 81, 99, 0.2)'" fa-properties='{zIndex: 100}'> <input class="searcher" type="text" placeholder="search by tag..." ng-show="searching"></input></fa-surface>
+            </fa-modifier>
+
+            <!-- login button-->
+            <fa-modifier fa-align="[1, 0]" 
+                         fa-origin="[1, 0]"
+                         fa-size="[100,65]">
+              <fa-surface fa-background-color="'rgba(5, 81, 99, 1)'" fa-properties='{zIndex: 101}' >
+               <a ui-sref="login" class="account" ng-hide="user" >Login</a>
+               <a ui-sref="account" class="account" ng-show="user" >Account</a>
+              </fa-surface>
+            </fa-modifier>
+            <!-- shopping icon-->
+            <fa-modifier fa-align="[0.87, 0.025]" 
+                         fa-origin="[1, 0]"
+                         fa-size="[20, 29]"
+                         >   
+              <fa-image-surface fa-image-url="/images/bagicon.png" class="headerlinker" fa-properties='{zIndex: 100}'>
+              </fa-image-surface>
+            </fa-modifier>
+            <!-- buy button-->
+            <fa-modifier fa-align="[0.88, 0.035]" 
+                         fa-origin="[0, 0]"
+                         >
+              <fa-surface fa-properties='{zIndex: 100}'> <a class="headerlink">Buy</a></fa-surface>
+            </fa-modifier>
+
+
+            </fa-view>
+            </fa-modifier>
+            <!-- header end -->  
+
+
+            <!-- view entry -->
+            <fa-modifier>
+              <fa-view>
+                <div ui-view></div>
+              </fa-view>
+            </fa-modifier>
+            
+            
+            <!-- footer -->
+            
+            <fa-modifier fa-align="[0.5, 1]" 
+                           fa-origin="[0.5, 1]" 
+                          fa-size="[undefined,0]">
+              <fa-grid-layout fa-options="{dimensions: [3,1]}">
+                <fa-surface fa-background-color="'#065163'" fa-properties='{zIndex: 100}'>
+                    <div class="text-center">
+                        
+                    </div>
+                </fa-surface>
+                <fa-surface fa-background-color="'#065163'" fa-properties='{zIndex: 100}'>
+                    <div class="text-center">
+                        
+                    </div>
+                </fa-surface>
+                <fa-surface fa-background-color="'#065163'" fa-properties='{zIndex: 100}'>
+                    <div class="text-center">
+                        
+                    </div>
+                </fa-surface>
+            </fa-grid-layout>
+            </fa-modifier>
+            
+            </fa-header-footer-layout>
+            
+        </fa-view> 
+        </fa-app>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="https://code.famo.us/famous/latest/famous-global.js"></script>
+    <script src="https://code.famo.us/famous-angular/latest/famous-angular.js"></script>
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/firebase/changeEmail.js"></script>
+    <script src="scripts/firebase/simpleLogin.js"></script>
+    <script src="scripts/firebase/utils.js"></script>
+    <script src="scripts/firebase/auth.js"></script>
+    <script src="scripts/main/main-ctrl.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <!-- inject:partials -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>

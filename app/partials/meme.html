@@ -1,0 +1,114 @@
+<fa-view>
+
+	<fa-modifier fa-align="[0.13, 0.1]" 
+                 fa-origin="[0.5, 0.5]"
+                 fa-size="[250,75]">
+		<fa-surface>
+			
+			<div class="memetypefilters">
+				<span class="filterhover">Premade</span>
+				<span id="or">OR</span>
+				<span class="filterhover">Upload</span>
+			</div>
+			<div class="memesortfilters">
+				<div>Sort By:</div>
+				<select>
+					<option>Popular</option>
+					<option>Newest</option>
+					<option>Trend</option>
+				</select>
+			</div>
+
+		</fa-surface>
+
+		<fa-modifier fa-align="[0.9, 0.1]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[32,22]">
+			<fa-image-surface fa-image-url="/images/makeAssets/upload.png"></fa-image-surface>
+		</fa-modifier>
+	</fa-modifier>
+
+	<fa-modifier fa-align="[0.3, 0.05]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[150,32]">
+		<fa-surface fa-background-color="'rgba(5, 81, 99, 1)'"> <p class="makbtn">Add to Catalog</p></fa-surface>
+	</fa-modifier>
+	
+	<fa-modifier fa-align="[0.3, 0.13]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[150,32]">
+		<fa-surface fa-background-color="'rgba(5, 81, 99, 1)'">  <p class="makbtn">Share Emoty!</p></fa-surface>
+	</fa-modifier> 
+
+	<fa-modifier fa-align="[0.05, 0.2]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[470,400]">
+        
+        <fa-modifier fa-align="[0, 0]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[400,400]"> 
+
+
+        <fa-modifier>             
+		<fa-image-surface fa-image-url="/images/memes/meme1.png"></fa-image-surface>
+		</fa-modifier>
+
+		 
+		 <fa-modifier fa-align="[0, 0]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[400,70]">
+		 
+		 <fa-surface  fa-properties='{zIndex: 100}' >
+        	<input ng-model="syncedValue.$value" type="text" ng-change="syncedValue.$save()" />
+       	</fa-surface> 
+       	
+        </fa-modifier> 
+ 
+
+		</fa-modifier>
+
+		 <!-- text type buttons  -->
+
+		<fa-modifier fa-scale="[0,0]">
+
+		<fa-modifier fa-align="[0.05, 0.7]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[88,103]">
+		<fa-image-surface ng-mouseenter="ttobtnon()" ng-mouseleave="ttobtnoff()" fa-image-url="{{ttobtn}}"></fa-image-surface>
+		</fa-modifier>
+
+		<fa-modifier fa-align="[0.28, 0.7]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[113,103]">
+		<fa-image-surface ng-mouseenter="btobtnon()" ng-mouseleave="btobtnoff()" fa-image-url="{{btobtn}}"></fa-image-surface>
+		</fa-modifier>
+
+		<fa-modifier fa-align="[0.55, 0.7]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[86,103]">
+		<fa-image-surface ng-mouseenter="btbtnon()" ng-mouseleave="btbtnoff()" fa-image-url="{{btbtn}}"></fa-image-surface>
+		</fa-modifier>
+
+		<fa-modifier fa-align="[0.8, 0.7]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[86,103]">
+		<fa-image-surface ng-mouseenter="ntbtnon()" ng-mouseleave="ntbtnoff()" fa-image-url="{{ntbtn}}"></fa-image-surface>
+		</fa-modifier>
+
+		</fa-modifier>
+
+	</fa-modifier> 
+
+	<fa-modifier fa-align="[0.46, 0.05]" 
+                 	 fa-origin="[0, 0]"
+                     fa-size="[600,500]">
+		<fa-surface fa-background-color="'red'"></fa-surface>
+	</fa-modifier> 
+
+	 <!-- <fa-modifier>
+		<fa-surface></fa-surface>
+	</fa-modifier>  -->
+
+</fa-view>
+
+

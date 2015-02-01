@@ -1,0 +1,174 @@
+
+<fa-view >
+<!--Show filter column -->
+<fa-modifier fa-align="[0.5, 0]" 
+             fa-origin="[0.5, 0]"
+             fa-size="[undefined,45]">
+    <!--Show filter -->         
+	<fa-modifier fa-align="[0.5, 0]" 
+             	 fa-origin="[0.5, 0]"
+             	 fa-size="[900,45]"
+             	 >
+         <!--Show filter buttons -->      	 
+        <fa-modifier>     	 
+		<fa-surface fa-background-color="'rgba(199, 215, 218, 1)'" fa-properties='{zIndex: 100}'>
+			<ul class="discoverul">
+				<li><a ng-click="filterNewest()" ng-style ="{'font-weight': boldnew}">Newest</a></li>
+				<li><a ng-click="filterPopular()" ng-style ="{'font-weight': boldpop}">Popular</a></li>
+				<li><a ng-click="filterTrending()" ng-style ="{'font-weight': boldtre}">Trending</a></li>
+			</ul>
+		</fa-surface>
+		</fa-modifier>
+	 <!--Show filter bottom triangle --> 	
+	<fa-modifier fa-align="trianglePosition.get()" 
+             	 fa-origin="[0, 0]"
+             	 fa-size="[18,10]">
+		<fa-image-surface fa-image-url="/images/discoverAssets/triangle.png" fa-properties='{zIndex: 101}'></fa-image-surface>
+	</fa-modifier>	
+	 <!--Show left label --> 
+	<fa-modifier fa-align="[0, 0]" 
+             	 fa-origin="[0, 0]"
+             	 fa-size="[65,45]"
+             	 >
+		<fa-surface fa-background-color="'rgba(5, 81, 99, 1)'" fa-properties='{zIndex: 101}'><span id="discovershow">Show:</span></fa-surface>
+	</fa-modifier>
+	</fa-modifier>
+
+</fa-modifier>
+
+<fa-scroll-view fa-pipe-from="eventHandler" fa-options="{direction: 1,paginated: false}" >
+	<!--ng-repeat access viewpoint --> 
+	<fa-view>
+		<!--box boundary modifier --> 
+		<fa-modifier fa-size="[undefined, 530]" >
+			<!--Box Boundary NEEDED for scroll event outside of white box -->
+			<fa-modifier>
+			<fa-surface fa-pipe-to="eventHandler" fa-background-color="''" ></fa-surface>
+			</fa-modifier>
+			<!--White Back modifier --> 
+			<fa-modifier  fa-align="[0.5, .12]" 
+             	 		 fa-origin="[0.5, 0]" fa-size="[900, 450]" >
+             	<!--tags Modifier -->  		 
+             	<fa-modifier>
+             	<!--tag modifier -->  
+             	<fa-modifier  fa-align="[0, 0.05]" 
+             	 		 	  fa-origin="[tagOriginX.get(), 0]" fa-size="[169, 45]">
+             	 	<!--tag background -->  		 	  
+             	 	<fa-modifier  >	 	  
+             		<fa-surface fa-background-color="'rgba(5, 81, 99, 1)'" 
+             		ng-mouseover="showTag()" ng-mouseleave="hideTag()"><span class = "tagtext">coolfunny</span></fa-surface>
+             		</fa-modifier>
+             		<!--tag icon-->  
+             		<fa-modifier fa-align="[0.05, 0.5]" 
+             	 		 	     fa-origin="[0, 0.5]" fa-size="[18, 18]" fa-opacity="tagIconOpacity.get()"> 
+             		<fa-image-surface fa-image-url="/images/discoverAssets/tagicon.png"></fa-image-surface>
+             		</fa-modifier>
+             	</fa-modifier>
+             	<!--add 0.13 to align y value for each additional tag (0.05 + 0.13*$index) --> 
+             	
+             	</fa-modifier>
+
+             	<!--White Background --> 
+             	<fa-modifier> 		 	 
+				<fa-surface fa-background-color="'white'" fa-pipe-to="eventHandler" class="border" ></fa-surface>
+				</fa-modifier>
+
+				<!--Item type label --> 	
+				<fa-modifier fa-size="[70, 79]"
+							fa-align="[1, 0]" 
+             	 			fa-origin="[1.1, 0.1]">
+             		<fa-image-surface fa-pipe-to="eventHandler" fa-image-url="/images/discoverAssets/useroriginal.png" >
+             	</fa-modifier> 	
+
+             	<!--Meme Image --> 
+             	<fa-modifier fa-size="[322, 322]"
+							fa-align="[0.021, 0.02]" 
+             	 			fa-origin="[0, 0]">
+             		<fa-image-surface fa-pipe-to="eventHandler" fa-image-url="/images/memes/meme1.png"></fa-image-surface>
+             	</fa-modifier>
+
+             	<!--Funny Meter--> 
+             	<fa-modifier 
+             				fa-size="[360, 60]"
+							fa-align="[0, 0.75]"
+							fa-origin="[0, 0]" >
+             	<fa-modifier fa-size="[322, 29]"
+             	fa-origin="[0.5, 0]" 
+             					fa-align="[0.5, 0]">
+
+             		<fa-modifier fa-size= "[100,12]"
+             				fa-align="[0, 0]"
+							fa-origin="[0, 0]" >
+             		<fa-surface fa-background-color="'green'" ></fa-surface>
+             		</fa-modifier>	
+
+             		<fa-modifier>			
+             		<fa-image-surface fa-pipe-to="eventHandler" fa-image-url="/images/discoverAssets/meterframe.png"></fa-image-surface>
+             		</fa-modifier>
+             	</fa-modifier>
+
+             	<fa-modifier fa-size= "[28,28]"
+             				fa-align="[0.06, 0.48]"
+							fa-origin="[0.5, 0]" >
+             		<fa-image-surface fa-image-url="/images/discoverAssets/ha.png" ></fa-image-surface>
+             	</fa-modifier>
+
+             	<fa-modifier fa-size= "[28,28]"
+             				fa-align="[0.355, 0.48]"
+							fa-origin="[0.5, 0]" >
+             		<fa-image-surface fa-image-url="/images/discoverAssets/haha.png" ></fa-image-surface>
+             	</fa-modifier>
+
+             	<fa-modifier fa-size= "[28,28]"
+             				fa-align="[0.665, 0.48]"
+							fa-origin="[0.5, 0]" >
+             		<fa-image-surface fa-image-url="/images/discoverAssets/hahaha.png" ></fa-image-surface>
+             	</fa-modifier>
+
+             	<fa-modifier fa-size= "[28,28]"
+             				fa-align="[0.95, 0.48]"
+							fa-origin="[0.5, 0]" >
+             		<fa-image-surface fa-image-url="/images/discoverAssets/hahahaha.png" ></fa-image-surface>
+             	</fa-modifier>
+
+             	<fa-modifier fa-size= "[28,28]"
+             				fa-align="[0.95, 0.48]"
+							fa-origin="[0.5, 0]" >
+             		<fa-image-surface fa-image-url="/images/discoverAssets/hahahaha.png" ></fa-image-surface>
+             	</fa-modifier>
+
+             	</fa-modifier>
+             	<!--Funny Meter End--> 
+
+             	<fa-modifier fa-size= "[100,38]"
+             				fa-align="[0.42, 0.024]"
+							fa-origin="[0, 0]">
+							<fa-surface fa-background-color="'red'"></fa-surface>
+				</fa-modifier>
+
+				<fa-modifier fa-size= "[160,38]"
+             				fa-align="[0.65, 0.024]"
+							fa-origin="[0, 0]">
+							<fa-surface fa-background-color="'red'"></fa-surface>
+				</fa-modifier>
+
+				<fa-modifier fa-size= "[450,290]"
+             				fa-align="[0.42, 0.2]"
+							fa-origin="[0, 0]">
+							<fa-surface fa-background-color="'red'"></fa-surface>
+				</fa-modifier>
+
+				<fa-modifier fa-size= "[900,40]"
+             				fa-align="[0.5, 1]"
+							fa-origin="[0.5, 1]">
+							<fa-surface fa-background-color="'rgba(5, 81, 99, 0.3)'"></fa-surface>
+				</fa-modifier>
+
+			</fa-modifier>
+		</fa-modifier>
+	</fa-view>
+
+		
+</fa-scroll-view>
+</fa-view>
+		

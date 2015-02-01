@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    background-color:#F8F8F8; 
+}
+
+.full-screen {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.headerlink{
+    font-weight:500;
+    font-size:18px;
+    text-decoration: none;
+    color: #065163;
+    margin-top: 20px;
+    position: absolute;
+}
+.headerlinker{
+    margin-top: 15px;
+    position: absolute;
+}
+
+.headerlinkerr{
+    margin-top: 18px;
+    position: absolute;
+}
+.headerlink:hover{
+    color: #909090;
+}
+
+.account{
+    color: #fff;
+    font-weight:500;
+    margin-left: 25px;
+    margin-top: 20px;
+    position: absolute;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+.text-center{
+    text-align: center;
+}
+.memetypefilters{
+    color: #065163;
+    font-size: 16pt;
+    padding: 5px;
+}
+
+.memetypefilters span{
+    margin-left: 8px;
+    letter-spacing: 1px;
+}
+
+#or{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color:#065163;
+    padding:3%;
+    color:#fff;
+    font-size: 13pt;
+}
+
+.memesortfilters select{
+    border: 0;
+    appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 120px;
+    height: 30px;
+    display: block;
+    margin-top: 6px;
+    margin-left: 0;
+    padding-left: 9px;
+    border-radius: 0;
+    font-size: 14pt;
+    color: #065163;
+    font-family: 'Dosis', sans-serif;
+    background-image: url('http://cdn.flaticon.com/png/256/60995.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position:right center;
+    background-color:rgba(5, 81, 99, 0.2);
+    letter-spacing: 2px;
+    font-weight: 500;
+    display: inline;
+    margin-left: -4px;
+    
+}
+.memesortfilters div{
+    display: inline;
+    margin-left: 27px;
+    background-color:rgba(5, 81, 99, 0.2);
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 5px;
+    padding-top: 8px;
+    width: 100px;
+    font-size: 10pt;
+    color: #065163;
+    font-weight: 500;
+}
+
+.filterhover{
+    cursor: pointer;
+}
+
+.filterhover:hover{
+    font-weight: 600;
+    display: absolute;
+    margin-left: 6px;
+}
+
+.searcher{
+    width:320px;
+    height:60px;
+    margin-left: 2%;
+    border: none;
+    border-radius: 0;
+    background-color:rgba(5, 81, 99, 0);
+    appearance: none;
+    color: #065163;
+    font-size: 16pt;
+    font-family: 'Dosis', sans-serif;
+}
+
+input[type="text"]:focus {
+  outline:none ;
+}
+
+.margintopper{
+    margin-top: 65px;
+}
+
+#discovershow{
+    position: absolute;
+    margin-left: 18px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 11pt;
+}
+
+.discoverul{
+    display: inline;
+    list-style-type: none;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 70px;
+    font-size: 14pt;
+    color: #065163;
+    font-weight: 500;
+}
+
+.discoverul li{
+    float: left;
+}
+
+.discoverul li a{
+    text-decoration: none;
+    color: #065163;
+    display: block;
+    cursor: pointer;
+}
+
+.discoverul li:nth-child(2){
+    margin-left: 250px;
+}
+.discoverul li:nth-child(3){
+    margin-left: 250px;
+}
+.border{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(203,203,203,.6);
+}
+
+.tagtext{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 32px;
+    font-size:14pt;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.makbtn{
+    margin-top:5px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.none{display: none}
+
+
+.memetext {
+height: 100px;
+width:400px;
+font-weight: 700;
+letter-spacing: 1px;
+margin-top: 0;
+font-size: 40px;
+color: #fff;
+text-shadow:
+   0px 0px 0 #333,  
+    0px 0px 0 #333,
+    0px 0px 0 #333,
+     0px 0px 0 #333;
+}
+
+p:focus {
+  outline:none ;
+}
+
+.memeborder{
+    text-align: center;
+    border-style: dashed;
+    border-width: 4px;
+    border-color: rgba(203,203,203,.9);
+}
